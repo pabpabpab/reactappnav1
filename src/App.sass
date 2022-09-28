@@ -63,3 +63,21 @@
   padding: 20px 25px
   +font(18px, #686868, 400)
   text-align: center
+
+
+.link-inactive
+  display: block
+  padding: 20px 25px
+  +font(18px, #000, 700)
+  cursor: pointer
+  transition: background-color .3s
+  &:hover
+    background: #c1e0c1
+
+.link-active
+  display: block
+  background: #5a9442
+  padding: 20px 25px
+  +font(18px, #000, 700)
+  cursor: pointer
+  transition: background-color .3s
