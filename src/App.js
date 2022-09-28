@@ -20,7 +20,7 @@ export const AppContext = createContext(null);
 
 function App() {
     const {contacts} = useContacts();
-    const {correspondentId, changeCorrespondentIdCB} = useCorrespondent(contacts);
+    // const {correspondentId, changeCorrespondentIdCB} = useCorrespondent(contacts);
 
     const {msgState, dispatch, sendMessageCB} = useMessages();
     // const {filteredMessages} = useFilteredMessages(correspondentId, msgState);
