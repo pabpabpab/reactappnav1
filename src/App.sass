@@ -7,8 +7,8 @@
   width: 100vw
   height: 100vh
   display: grid
-  grid-template-areas: "contacts messages" "contacts input"
-  grid-template-rows: 1fr 85px
+  grid-template-areas: "contacts profile" "contacts messages" "contacts input"
+  grid-template-rows: 60px 1fr 85px
   grid-template-columns: 1.15fr 2.85fr
   grid-gap: 0
 
@@ -16,6 +16,13 @@
   background: #d4ead4
   padding: 20px 25px
   grid-area: contacts
+
+.profile
+  background: #b6bacd
+  height: 100%
+  padding: 10px 15px
+  grid-area: profile
+  align-self: center
 
 .messages
   background: #f1f2f7
@@ -69,6 +76,7 @@
   display: block
   padding: 20px 25px
   +font(18px, #000, 700)
+  text-decoration: none
   cursor: pointer
   transition: background-color .3s
   &:hover
@@ -79,5 +87,13 @@
   background: #5a9442
   padding: 20px 25px
   +font(18px, #000, 700)
+  text-decoration: none
   cursor: pointer
-  transition: background-color .3s
+
+.link-profile
+  display: block
+  background: #b6bacd
+  padding: 15px 25px
+  +font(18px, #000, 700)
+  text-decoration: none
+  cursor: pointer
