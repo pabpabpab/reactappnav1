@@ -6,11 +6,26 @@
 .messenger-app
   width: 100vw
   height: 100vh
+  background: #a59977
   display: grid
-  grid-template-areas: "contacts profile" "contacts messages" "contacts input"
-  grid-template-rows: 60px 1fr 85px
+  grid-template-areas: "add-contact profile" "contacts messages" "contacts input"
+  grid-template-rows: 70px 1fr 85px
   grid-template-columns: 1.15fr 2.85fr
   grid-gap: 0
+
+
+.add-contact
+  background: #a59977
+  width: 97%
+  padding: 10px 15px
+  box-sizing: border-box
+  grid-area: add-contact
+
+  display: grid
+  grid-template-rows: 1fr
+  grid-template-columns: 1fr 50px
+  grid-gap: 0
+  align-self: center
 
 .contacts
   background: #d4ead4
@@ -20,9 +35,13 @@
 .profile
   background: #b6bacd
   height: 100%
-  padding: 10px 15px
+  padding: 0 15px
   grid-area: profile
-  align-self: center
+  //display: grid
+  //align-self: center
+  display: flex
+  align-items: center
+
 
 .messages
   background: #f1f2f7
@@ -54,14 +73,6 @@
   outline: none
   border: none
 
-.contact-item
-  padding: 20px 25px
-  +font(18px, #000, 600)
-  cursor: pointer
-  transition: background-color .3s
-  &:hover
-    background: #c1e0c1
-
 .message-item
   padding: 20px 25px
   +font(18px, #000, 400)
@@ -71,6 +82,28 @@
   +font(18px, #686868, 400)
   text-align: center
 
+
+
+.contact-item
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0
+  +font(18px, #000, 600)
+  transition: background-color .3s
+  &__delete-button
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 20px
+    width: 20px
+    background: #acd4ac
+    +font(12px, #000, 600)
+    outline: none
+    cursor: pointer
+    border: none
+    &:hover
+      background: #8fbf8f
 
 .link-inactive
   display: block
@@ -90,10 +123,13 @@
   text-decoration: none
   cursor: pointer
 
+
 .link-profile
-  display: block
+  display: flex
+  align-items: center
   background: #b6bacd
   padding: 15px 25px
   +font(18px, #000, 700)
   text-decoration: none
   cursor: pointer
+// background: #888fae

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const Profile = () => {
+const ProfilePage = () => {
     const { userId } = useParams();
     const navigate = useNavigate();
 
@@ -17,4 +17,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default ProfilePage;

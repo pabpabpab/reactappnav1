@@ -3,19 +3,19 @@ import theme from './components/theme/theme';
 import { ThemeProvider } from '@mui/material/styles';
 import {Route, Routes} from 'react-router-dom';
 
-import Messenger from './components/Messenger';
-import Profile from './components/Profile';
-import NotFound from './components/NotFound';
+import MessengerPage from './components/pages/MessengerPage';
+import ProfilePage from './components/pages/ProfilePage';
+import NotFoundPage from './components/pages/NotFoundPage';
 
 function App() {
 
     return (
             <ThemeProvider theme={theme}>
                 <Routes>
-                    <Route path="/" element={<Messenger />} />
-                    <Route path="/messenger/*" element={<Messenger />} />
-                    <Route path="/profile/:userId" element={<Profile />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="/" element={<MessengerPage />} />
+                    <Route path="/messenger/*" element={<MessengerPage />} />
+                    <Route path="/profile/:userId" element={<ProfilePage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </ThemeProvider>
     );

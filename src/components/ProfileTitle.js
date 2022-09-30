@@ -1,7 +1,9 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, memo } from 'react';
 import { Link } from 'react-router-dom';
 
-const ProfileTitle = ({ contacts, correspondentId }) => {
+// Компонент рендерит ссылку на профиль контакта с которым идет чат
+export default memo(function ProfileTitle ({ contacts, correspondentId }) {
+    // console.log('render');
 
     const user = useMemo(
         () => contacts.find((item) => item.userId === correspondentId),
@@ -25,6 +27,13 @@ const ProfileTitle = ({ contacts, correspondentId }) => {
             </Link>
         </div>
     );
-};
-
-export default ProfileTitle;
+}, (prevState, nextState) => {
+    // console.log(prevState, nextState);
+    if (prevState.correspondentId !== nextState.correspondentId) {
+        return false;
+    }
+    if (prevState.contacts.length !== nextState.contacts.length) {
+        return false;
+    }
+    return true; // ререндер не производится когда true
+});
